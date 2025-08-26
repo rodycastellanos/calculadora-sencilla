@@ -4,8 +4,10 @@ import {it,describe,expect, vi} from "vitest";
 describe("Debería sumar los números que se pasen como parametros y mostrarlos en consola", () => {
   const logSpy = vi.spyOn(console, "log").mockImplementation(() => {});
   it("Debería imprimir 5 en la suma de 2 + 3", () => {
-    addTwoNumbers(2,3);
+    let x = addTwoNumbers(2,3);
+    console.log(x);
     expect(logSpy).toHaveBeenCalledWith(5);
+    
   })
   it("Debería imprimir -5 en la suma de -2 + -3", () => {
     addTwoNumbers(-2,-3);
